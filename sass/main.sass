@@ -1,0 +1,898 @@
+$wizz-blue: #06038D
+$wizz-default-color: #343434
+$wizz-pink: #C6007E
+$wizz-divider: #F2F2F2
+
+body
+	width: 100%
+	margin: 0
+	font-family: 'Source Sans Pro'
+	color: $wizz-default-color
+
+#container
+	.wrapper
+		display: flex
+		
+		.sidebar
+			width: 300px
+			background-color: #F2F2F2
+			box-shadow: 0 15px 25px rgba(0,0,0,0.1)
+
+			&__header
+				border-bottom: 1px solid #c1c1c1
+				text-align: center
+				img
+					margin-top: 19px
+				.header__text
+					font-style: normal
+					font-weight: bold
+					font-size: 12px
+					line-height: 15px
+					text-align: center
+					text-transform: uppercase
+					color: $wizz-blue
+					margin-bottom: 17px
+					position: relative
+					&::after
+						content: ''
+						position: absolute
+						width: 9px
+						height: 9px
+						top: 3px
+						right: 60px
+						background-size: cover 
+						background-image:  url('../assets/pen.svg')  
+						cursor: pointer
+			&__flights
+				padding: 15px 20px 0
+				.flights__info
+					margin-bottom: 16px
+					display: flex
+					justify-content: space-between
+					font-size: 16px
+					font-weight: bold
+					line-height: 20px
+					.name
+						span
+							margin-right: 5px
+						text-transform: uppercase
+					.price
+						color: $wizz-blue
+				.flights__details
+					margin-bottom: 10px
+					.flights-info
+						display: flex
+						flex-direction: row
+						.date
+							font-size: 17px
+							line-height: 18px
+							text-transform: uppercase
+							background: #ffffff
+							border: 2px solid #e1e1e1
+							border-radius: 3px
+							margin-right: 12px
+							text-align: center
+							font-weight: normal
+							font-style: normal
+							.month
+								background: #F2F2F2
+							.day
+								font-weight: bold
+							div
+								padding: 2px 8px
+						.time-and-location
+							color: $wizz-default-color
+							.location
+								font-size: 16px
+								line-height: 18px
+								font-weight: bold
+							.time
+								font-size: 12px
+								line-height: 15px
+				.baggage-info
+					display: flex
+					flex-direction: row
+					flex-wrap: wrap
+					font-size: 12px
+					line-height: 15px
+					max-width: 216px
+					color: $wizz-default-color
+					margin-top: 5px
+					.fare
+						font-weight: bold
+			&__options
+				padding: 15px 20px 15px
+				position: relative
+				max-height: 50px
+				overflow: hidden
+				&::before
+					position: absolute	
+					content: ''
+					width: 100%
+					height: 8px
+					top: 0
+					left: 0
+					background-image: url('../assets/Separator-with-Arrow.svg') 
+					background-size: cover
+				.options__title
+					font-size: 16px
+					line-height: 20x
+					text-transform: uppercase
+					font-weight: bold
+				.content
+					display: none
+				&.options--active
+					max-height: unset
+					overflow: auto
+					background-color: #ffffff
+					.options__title
+						margin-bottom: 15px
+					.content
+						display: block
+						.people
+							.person
+								display: flex
+								align-items: center
+								margin-bottom: 20px
+								.avatar-icon
+									width: 56px
+									height: 56px
+									border: 1px solid #e1e1e1
+									border-radius: 50%
+									display: inline-block
+									margin-right: 10px
+									position: relative
+									img
+										position: absolute
+										top: 50%
+										left: 50%
+										transform: translate(-50%,-50%)
+								.avatar-text
+									font-size: 16px
+									line-height: 20px
+									font-weight: bold
+						.info-message
+							display: flex
+							align-items: flex-start
+							margin-bottom: 5px
+							.process-bar
+								width: 16px
+								height: 16px
+								border-radius: 50%
+								background-color: #e1e1e1
+								position: relative
+								margin-right: 10px
+								margin-top: 4px
+								.status-bar
+									position: absolute
+									width: 10px
+									height: 10px
+									top: 50%
+									left: 50%
+									transform: translate(-50%,-50%)
+									background-color: $wizz-blue 
+									border-radius: 50%
+							.message
+								font-size: 16px
+								line-height: 20px
+								color: #919191
+								font-weight: bold
+			&__payment-bar
+				padding: 11px 17px
+				background-color: $wizz-blue
+				font-size: 16px
+				line-height: 20px
+				color: #ffffff
+				display: flex
+				justify-content: space-between
+				align-items: center
+				.icon-text-select
+					display: flex
+					align-items: center
+					flex-wrap: wrap
+					.icon
+						margin-right: 4px
+						width: 18px
+						height: 15px
+						background-image: url('../assets/cart-icon.svg') 
+					.text
+						margin-right: 6px
+						span
+							font-weight: bold
+							text-transform: uppercase
+					.select
+						select
+							padding: 6px 0px 6px 8px
+							background-color: #3434E0
+							border: none
+							border-radius: 3px
+							text-align-last: center
+							color: #ffffff
+							text-transform: uppercase
+							font-size: 16px
+							line-height: 20px
+							outline: none
+							&:hover
+								background-color: #3434E0 !important
+								option:hover
+									background-color: #3434E0 !important
+				.amount-holder
+					font-size: 16px
+					line-height: 20px
+					font-weight: bold
+		.mainbar
+			flex: 1
+			background-color: #E5E5E5
+			&__navbar
+				width: 100%
+				background-color: $wizz-blue
+				position: relative
+				z-index: 9999
+				nav.main-menu
+					ul
+						margin: 0
+						padding: 0
+						display: flex
+						justify-content: flex-end
+						padding-right: 90px
+						li
+							list-style: none
+							padding: 18px 20px
+							text-transform: uppercase
+							font-size: 12px
+							line-height: 14px
+							position: relative
+							color: #ffffff
+							&:hover
+								background-color: #3434E0
+							&:after
+								content: ''
+								position: absolute
+								width: 2px
+								height: 34px
+								background-color: #201DBC
+								right: 0
+								top: 50%
+								transform: translateY(-50%)
+							&:last-child
+								&:after
+									display: none
+							a
+								color: #ffffff
+								text-decoration: none
+								option
+									span
+										width: 20px
+										height: 20px
+										margin-right: 15px
+							ul
+								background-color: $wizz-blue
+								position: absolute
+								left: 0
+								display: none
+								padding: 0
+								li
+									display: block
+									&:after
+										content: none
+							&.active
+								ul
+									display: block
+									margin-top: 18px
+									width: 100%
+							&.sub-menu
+								padding: 18px 35px 18px 20px
+								&:hover
+									background-color: unset
+								&:before
+									content: ''
+									position: absolute
+									width: 12px
+									height: 12px
+									background-image: url('../assets/white.svg')
+									background-size: cover
+									right: 18px
+								&.languages
+									padding: 18px 20px 18px 56px
+									&:before
+										right: 5px
+									a:before
+										content: ''
+										position: absolute
+										width: 20px
+										height: 20px
+										left: 21px
+										top: 50%
+										transform: translateY(-50%)
+										background-image: url('../assets/Flag.svg')
+										background-size: cover
+									ul
+										li
+											padding-left: 56px
+
+				.menu-toggle
+					position: absolute
+					left: 20px
+					top: 50%
+					transform: translateY(-50%)
+					color: white
+					display: none
+					cursor: pointer
+				.mobile-icon,.mobile-sign-in
+					display: none
+			&__wrapper
+				padding: 60px 90px 100px
+				.main-title
+					font-size: 40px
+					line-height: 48px
+					text-transform: uppercase
+					color: $wizz-blue
+					font-weight: 300
+					margin-bottom: 40px
+				.back-button
+					cursor: pointer
+					display: none
+					font-size: 12px
+					line-height: 24px
+					color: $wizz-pink
+					text-decoration: underline
+					margin-bottom: 20px
+					font-weight: bold
+					position: relative
+					padding-left: 17px
+					&:before
+						content: ''
+						position: absolute
+						display: inline-block
+						width: 10px
+						height: 10px
+						background-image: url('../assets/Vector.svg')  
+						background-size: contain
+						background-repeat: no-repeat
+						background-position: center
+						top: 50%
+						transform: translateY(-50%)
+						left: 0
+				.main-form-box					
+					padding: 0px 50px 50px
+					box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1)
+					background-color: #ffffff
+					border-radius: 3px
+					.passangers
+						display: flex
+						align-items: flex-end
+						.avatar-icon
+							width: 56px
+							height: 56px
+							border: 1px solid #e1e1e1
+							border-radius: 50%
+							display: inline-block
+							margin-right: 14px
+							position: relative
+							margin-top: -20px
+							background-color: #ffffff
+							img
+								position: absolute
+								top: 50%
+								left: 50%
+								transform: translate(-50%,-50%)
+						.passenger-icon
+							font-size: 12px 
+							line-height: 16px
+							text-transform: uppercase
+							font-weight: bold
+							color: $wizz-blue
+							margin-bottom: 5px
+					.baggage-form
+						form
+							.name-and-gender
+								margin-top: 17px
+								display: flex
+								flex-wrap: wrap
+								justify-content: space-between
+								.name
+									flex: 1
+									display: flex
+									margin-right: 20px
+									input[type="text"]
+										width: 50%
+										border: none
+										padding: 23px 0px 23px 16px
+										border: 1px solid #999999
+										font-size: 16px
+										line-height: 24px
+										color: #999999
+										border-radius: 0 3px 3px 0
+										outline: none
+										&.no-border-right
+											border-right: 0px
+											border-radius: 3px 0 0 3px
+								.fill-out-info
+									display: none
+									font-size: 12px
+									line-height: 18px
+									color: #999999
+									margin-top: 7px
+									margin-bottom: 21px
+									padding-left: 20px
+									position: relative
+									&:before
+										content: ''
+										position: absolute
+										width: 12px
+										height: 12px
+										display: inline-block
+										background-image: url('../assets/info-smaller.svg')
+										background-size: cover
+										top: 2px
+										left: 0
+
+								.gender
+									display: flex
+									width: 200px
+									.female,.male
+										width: 50%
+										padding: 25px 15px
+										display: flex
+										border: 2px solid #999999
+										background-color: #ffffff
+										border-radius: 0px 3px 3px 0px
+										cursor: pointer
+										color: $wizz-blue
+										font-size: 14px
+										line-height: 20px
+										font-weight: bold
+										&.diff-border-radius
+											border-radius: 3px 0px 0px 3px
+										span
+											margin-right: 10px
+											display: flex
+											align-items: center
+											img
+												display: none
+										&.active
+											border: 2px solid $wizz-pink
+											color: $wizz-pink
+											span
+												img
+													display: block
+									.female
+										border-width: 2px 0px 2px 2px
+										span
+											margin-right: 5px
+									.male
+										border-width: 2px 2px 2px 0
+							.special-block
+								margin-top: 10px
+								display: flex
+								align-items: baseline
+								margin-bottom: 9px
+								.special-link
+									margin-right: 21px
+									font-size: 12px
+									line-height: 24px
+									text-transform: uppercase
+									font-weight: bold
+									a
+										color: $wizz-pink
+								.info-text
+									color: #343434
+									font-size: 12px
+									line-height: 18px
+							.content-divider
+								width: 100%
+								height: 1px
+								background-color: $wizz-divider
+							.custom-checkbox-wizz
+								margin-top: 30px
+								label
+									font-size: 14px
+									line-height: 20px
+									font-weight: bold
+									color: #343434
+									user-select: none
+								.styled-checkbox
+									position: absolute
+									opacity: 0
+									& + label 
+										position: relative
+										cursor: pointer
+										padding: 0
+									& + label:before
+										content: ''
+										margin-right: 10px
+										display: inline-block
+										vertical-align: middle
+										width: 22px
+										height: 22px
+										background: transparent
+										border: 2px solid #999999
+										border-radius: 3px
+									&:checked + label:before 
+										background-color: $wizz-pink
+										background-image: url('../assets/checkmark.svg')
+										background-size: 18px
+										background-repeat: no-repeat
+										background-position: center 
+										border: 2px solid transparent
+							.baggage-select
+								margin-top: 40px
+								.title
+									font-weight: 300
+									font-size: 32px
+									line-height: 38px
+									color: $wizz-blue
+									position: relative
+									&.with-info
+										&:after
+											content: ''
+											position: absolute
+											display: inline-block
+											width: 18px
+											height: 18px
+											background-image: url('../assets/info.svg')
+											background-size: cover
+											top: 59%
+											transform: translateY(-50%)
+											margin-left: 12px
+											cursor: pointer
+								.baggages-box
+									margin-top: 40px
+									margin-bottom: 20px
+									display: flex
+									justify-content: space-between
+									.box
+										border: 1px solid #e1e1e1
+										border-radius: 3px
+										width: 32%
+										cursor: pointer
+										position: relative
+										&.active
+											border: 1px solid $wizz-blue
+										&:hover
+											border-color: $wizz-blue
+										&.popular
+											.popular-ribbon	
+												position: absolute
+												top: 0
+												right: 0
+
+										.box-content
+											height: 100%
+											display: flex
+											justify-content: flex-end
+											flex-direction: column
+											align-items: center
+											.number
+												font-size: 22px
+												line-height: 28px
+												color: #343434
+												font-weight: bold
+											.bag
+												margin-bottom: 30px
+												margin-top: 40px
+											&.middle-margin-top
+												margin-bottom: 25px
+												margin-top: 30px
+											&.less-margin-top
+												margin-bottom: 20px
+												margin-top: 22px
+											.price
+												color: $wizz-blue
+												font-size: 14px
+												line-height: 20px
+												font-weight: normal
+												margin-bottom: 30px
+								.custom-select
+									margin-top: 30px
+									margin-bottom: 30px
+									select
+										border: none
+										-webkit-appearance: none
+										width: 100%
+										background: url('../assets/caret.svg') 98% / 15% no-repeat $wizz-divider
+										background-size: 8px
+										color: $wizz-pink
+										font-size: 12px
+										line-height: 24px
+										text-transform: uppercase
+										font-weight: bold
+										padding: 8px 20px 8px 20px
+										outline: none
+										border-radius: 3px
+									&.more-margin
+										margin-bottom: 40px
+								.carry-bags
+									display: flex
+									justify-content: space-between
+									align-items: center
+									margin-bottom: 20px
+									.description
+										display: flex
+										.bag-image
+											margin-right: 55px
+										.info-list
+											.main-info
+												margin-bottom: 10px
+												font-size: 18px
+												line-height: 22px
+												font-weight: bold
+												color: #343434
+												span.wizz-blue
+													color: $wizz-blue
+											.list
+												ul
+													margin: 0
+													padding: 0
+													list-style: circle inside url("../assets/dot.svg")
+													li
+														span.wizz-blue
+															color: $wizz-blue
+															font-weight: bold
+									&.double
+										margin-top: 40px
+										
+									&.single
+										margin-top: 20px
+										margin-bottom: 30
+										.description
+											.bag-image
+												margin-left: 15px
+									.add-baggage-button
+										.button
+											color: $wizz-blue
+											font-weight: bold
+											font-size: 14px
+											line-height: 20px
+											text-align: center
+											width: 240px
+											border: 2px solid #999999
+											border-radius: 3px
+											position: relative
+											padding: 25px 0
+											cursor: pointer
+											span
+												font-size: 12px
+												line-height: 18px
+												font-weight: normal
+											&:after
+												content: ''
+												position: absolute
+												right: 0
+												height: 100%
+												top: 0
+												width: 16px
+												background-color: #E5E5E5
+											&.extra-charge
+												padding: 18px 0 17px 0
+											&:hover
+												border: 2px solid $wizz-blue
+												&:after
+													background-color: $wizz-blue
+							.divider-with-or
+									text-align: center
+									text-transform: uppercase
+									font-size: 14px
+									line-height: 17px
+									color: #343434
+									position: relative
+									&:before
+										content: ''
+										position: absolute
+										width: 100%
+										height: 1px
+										background-color: #e1e1e1
+										left: 0
+										top: 50%
+										transform: translateY(-50%)
+									span
+										padding: 0 30px
+										position: relative
+										background-color: #ffffff
+							.next-button-and-other-options
+								text-transform: uppercase
+								display: flex
+								justify-content: space-between
+								align-items: center
+								margin-top: 50px
+								.next-button
+									color: #ffffff
+									font-size: 16px
+									line-height: 19px
+									font-weight: 500
+									background-color: $wizz-pink
+									border: 1px solid transparent
+									padding: 17px 0
+									width: 180px
+									text-align: center
+									border-radius: 3px
+									cursor: pointer
+									transition: all 0.5s
+									&:hover
+										border: 1px solid $wizz-pink
+										background-color: white
+										color: $wizz-pink
+								.same-to-all
+									color: $wizz-pink
+									text-decoration: underline
+									font-size: 12px
+									font-weight: bold
+									line-height: 24px
+									cursor: pointer
+
+									
+
+	@media(max-width: 1240px)
+		.wrapper
+			.mainbar
+				&__wrapper
+					.main-form-box
+						.baggage-form
+							form
+								.baggage-select
+									.carry-bags
+										.description
+											.bag-image
+												margin-right: 20px
+		@media(max-width: 1080px)
+		
+		.wrapper
+			.mainbar
+				&__wrapper
+					.main-form-box
+						padding: 0 20px 50px
+						.baggage-form
+							form
+								.name-and-gender
+									.name
+										width: 100%
+								.special-block
+									margin-bottom: 23px
+								.baggage-select
+									.carry-bags
+										display: block
+										.description
+											margin-bottom: 20px
+										.add-baggage-button
+											.button
+												width: 100%
+												padding: 15px 0
+												&.extra-charge
+														padding: 8px 0 7px 0
+
+
+
+
+	@media(max-width: 991px)
+		.wrapper
+			.sidebar
+				display: none
+			.mainbar
+				&__navbar
+					height: 60px
+					.menu-toggle
+						display: block
+					.mobile-icon
+						display: block
+						position: absolute
+						top: 50%
+						left: 50%
+						transform: translate(-50%,-50%)
+					.mobile-sign-in
+						display: block
+						position: absolute
+						right: 46px
+						top: 50%
+						transform: translateY(-50%)
+						color: white
+						text-transform: uppercase
+						font-weight: 600
+						font-size: 12px
+						line-height: 14px
+						&:after
+							content: ''
+							position: absolute
+							width: 16px
+							height: 20px
+							right: -26px
+							background-image: url('../assets/lock.svg')
+							background-size: cover
+							top: -5px
+					nav.main-menu
+						background-color: $wizz-blue 
+						position: absolute
+						top: 60px
+						width: 100%
+						//max-height: 0
+						left: 0
+						overflow: hidden
+						transition: all 0.5s
+						transform: scaleY(0)
+						transform-origin: top
+						transition: transform 0.26s ease
+						&.opened
+							//max-height: 350px
+							transform: scaleY(1)
+						ul
+							display: block
+							padding: 0
+							text-align: center
+							li
+								&.mobile-hidden
+									display: none
+								ul
+									position: relative
+								&.sub-menu
+									&.languages
+										padding: 18px 20px
+										&:before
+											right: 18px
+										a
+											position: relative
+										a:before
+											left: -40px
+										ul
+											li
+												padding-left: unset
+				&__wrapper
+					padding: 26px 20px 260px
+					.back-button
+						display: block
+					.main-form-box
+						.baggage-form
+							form
+								.name-and-gender
+									flex-direction: column
+									.name
+										margin: 0
+									.fill-out-info
+										display: block
+									.gender
+										width: 100%
+										.female,.male
+											justify-content: center
+								.baggage-select
+									.title
+										width: 150px
+										&.with-info
+											&:after
+												top: 80%
+									.baggages-box
+										overflow-x: auto
+										&::-webkit-scrollbar
+											display: none
+										.box
+											width: unset
+											min-width: 55%
+											margin-right: 10px
+											&:last-child
+												margin: 0
+								.special-block
+									display: block
+									.special-link
+										margin-right: 0
+										margin-bottom: 10px		
+	@media(max-width: 460px)
+		.wrapper
+			.mainbar
+				&__wrapper
+					.main-form-box
+						padding-bottom: 0
+						.baggage-form
+							form
+								.next-button-and-other-options
+									flex-direction: column
+									margin-top: 30px
+									.next-button
+										order: 2
+										width: 100%
+										margin-bottom: 20px
+									.same-to-all
+										margin-bottom: 20px
+
+								
+
+
+
+
+

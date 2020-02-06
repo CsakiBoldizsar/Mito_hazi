@@ -1,0 +1,823 @@
+body {
+  width: 100%;
+  margin: 0;
+  font-family: "Source Sans Pro";
+  color: #343434; }
+
+#container .wrapper {
+  display: flex; }
+  #container .wrapper .sidebar {
+    width: 300px;
+    background-color: #F2F2F2;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); }
+    #container .wrapper .sidebar__header {
+      border-bottom: 1px solid #c1c1c1;
+      text-align: center; }
+      #container .wrapper .sidebar__header img {
+        margin-top: 19px; }
+      #container .wrapper .sidebar__header .header__text {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #06038D;
+        margin-bottom: 17px;
+        position: relative; }
+        #container .wrapper .sidebar__header .header__text::after {
+          content: "";
+          position: absolute;
+          width: 9px;
+          height: 9px;
+          top: 3px;
+          right: 60px;
+          background-size: cover;
+          background-image: url("../assets/pen.svg");
+          cursor: pointer; }
+    #container .wrapper .sidebar__flights {
+      padding: 15px 20px 0; }
+      #container .wrapper .sidebar__flights .flights__info {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 20px; }
+        #container .wrapper .sidebar__flights .flights__info .name {
+          text-transform: uppercase; }
+          #container .wrapper .sidebar__flights .flights__info .name span {
+            margin-right: 5px; }
+        #container .wrapper .sidebar__flights .flights__info .price {
+          color: #06038D; }
+      #container .wrapper .sidebar__flights .flights__details {
+        margin-bottom: 10px; }
+        #container .wrapper .sidebar__flights .flights__details .flights-info {
+          display: flex;
+          flex-direction: row; }
+          #container .wrapper .sidebar__flights .flights__details .flights-info .date {
+            font-size: 17px;
+            line-height: 18px;
+            text-transform: uppercase;
+            background: #ffffff;
+            border: 2px solid #e1e1e1;
+            border-radius: 3px;
+            margin-right: 12px;
+            text-align: center;
+            font-weight: normal;
+            font-style: normal; }
+            #container .wrapper .sidebar__flights .flights__details .flights-info .date .month {
+              background: #F2F2F2; }
+            #container .wrapper .sidebar__flights .flights__details .flights-info .date .day {
+              font-weight: bold; }
+            #container .wrapper .sidebar__flights .flights__details .flights-info .date div {
+              padding: 2px 8px; }
+          #container .wrapper .sidebar__flights .flights__details .flights-info .time-and-location {
+            color: #343434; }
+            #container .wrapper .sidebar__flights .flights__details .flights-info .time-and-location .location {
+              font-size: 16px;
+              line-height: 18px;
+              font-weight: bold; }
+            #container .wrapper .sidebar__flights .flights__details .flights-info .time-and-location .time {
+              font-size: 12px;
+              line-height: 15px; }
+      #container .wrapper .sidebar__flights .baggage-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 12px;
+        line-height: 15px;
+        max-width: 216px;
+        color: #343434;
+        margin-top: 5px; }
+        #container .wrapper .sidebar__flights .baggage-info .fare {
+          font-weight: bold; }
+    #container .wrapper .sidebar__options {
+      padding: 15px 20px 15px;
+      position: relative;
+      max-height: 50px;
+      overflow: hidden; }
+      #container .wrapper .sidebar__options::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 8px;
+        top: 0;
+        left: 0;
+        background-image: url("../assets/Separator-with-Arrow.svg");
+        background-size: cover; }
+      #container .wrapper .sidebar__options .options__title {
+        font-size: 16px;
+        line-height: 20x;
+        text-transform: uppercase;
+        font-weight: bold; }
+      #container .wrapper .sidebar__options .content {
+        display: none; }
+      #container .wrapper .sidebar__options.options--active {
+        max-height: unset;
+        overflow: auto;
+        background-color: #ffffff; }
+        #container .wrapper .sidebar__options.options--active .options__title {
+          margin-bottom: 15px; }
+        #container .wrapper .sidebar__options.options--active .content {
+          display: block; }
+          #container .wrapper .sidebar__options.options--active .content .people .person {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; }
+            #container .wrapper .sidebar__options.options--active .content .people .person .avatar-icon {
+              width: 56px;
+              height: 56px;
+              border: 1px solid #e1e1e1;
+              border-radius: 50%;
+              display: inline-block;
+              margin-right: 10px;
+              position: relative; }
+              #container .wrapper .sidebar__options.options--active .content .people .person .avatar-icon img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); }
+            #container .wrapper .sidebar__options.options--active .content .people .person .avatar-text {
+              font-size: 16px;
+              line-height: 20px;
+              font-weight: bold; }
+          #container .wrapper .sidebar__options.options--active .content .info-message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 5px; }
+            #container .wrapper .sidebar__options.options--active .content .info-message .process-bar {
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              background-color: #e1e1e1;
+              position: relative;
+              margin-right: 10px;
+              margin-top: 4px; }
+              #container .wrapper .sidebar__options.options--active .content .info-message .process-bar .status-bar {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #06038D;
+                border-radius: 50%; }
+            #container .wrapper .sidebar__options.options--active .content .info-message .message {
+              font-size: 16px;
+              line-height: 20px;
+              color: #919191;
+              font-weight: bold; }
+    #container .wrapper .sidebar__payment-bar {
+      padding: 11px 17px;
+      background-color: #06038D;
+      font-size: 16px;
+      line-height: 20px;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      #container .wrapper .sidebar__payment-bar .icon-text-select {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap; }
+        #container .wrapper .sidebar__payment-bar .icon-text-select .icon {
+          margin-right: 4px;
+          width: 18px;
+          height: 15px;
+          background-image: url("../assets/cart-icon.svg"); }
+        #container .wrapper .sidebar__payment-bar .icon-text-select .text {
+          margin-right: 6px; }
+          #container .wrapper .sidebar__payment-bar .icon-text-select .text span {
+            font-weight: bold;
+            text-transform: uppercase; }
+        #container .wrapper .sidebar__payment-bar .icon-text-select .select select {
+          padding: 6px 0px 6px 8px;
+          background-color: #3434E0;
+          border: none;
+          border-radius: 3px;
+          text-align-last: center;
+          color: #ffffff;
+          text-transform: uppercase;
+          font-size: 16px;
+          line-height: 20px;
+          outline: none; }
+          #container .wrapper .sidebar__payment-bar .icon-text-select .select select:hover {
+            background-color: #3434E0 !important; }
+            #container .wrapper .sidebar__payment-bar .icon-text-select .select select:hover option:hover {
+              background-color: #3434E0 !important; }
+      #container .wrapper .sidebar__payment-bar .amount-holder {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold; }
+  #container .wrapper .mainbar {
+    flex: 1;
+    background-color: #E5E5E5; }
+    #container .wrapper .mainbar__navbar {
+      width: 100%;
+      background-color: #06038D;
+      position: relative;
+      z-index: 9999; }
+      #container .wrapper .mainbar__navbar nav.main-menu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 90px; }
+        #container .wrapper .mainbar__navbar nav.main-menu ul li {
+          list-style: none;
+          padding: 18px 20px;
+          text-transform: uppercase;
+          font-size: 12px;
+          line-height: 14px;
+          position: relative;
+          color: #ffffff; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li:hover {
+            background-color: #3434E0; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li:after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 34px;
+            background-color: #201DBC;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%); }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li:last-child:after {
+            display: none; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li a {
+            color: #ffffff;
+            text-decoration: none; }
+            #container .wrapper .mainbar__navbar nav.main-menu ul li a option span {
+              width: 20px;
+              height: 20px;
+              margin-right: 15px; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li ul {
+            background-color: #06038D;
+            position: absolute;
+            left: 0;
+            display: none;
+            padding: 0; }
+            #container .wrapper .mainbar__navbar nav.main-menu ul li ul li {
+              display: block; }
+              #container .wrapper .mainbar__navbar nav.main-menu ul li ul li:after {
+                content: none; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li.active ul {
+            display: block;
+            margin-top: 18px;
+            width: 100%; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu {
+            padding: 18px 35px 18px 20px; }
+            #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu:hover {
+              background-color: unset; }
+            #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu:before {
+              content: "";
+              position: absolute;
+              width: 12px;
+              height: 12px;
+              background-image: url("../assets/white.svg");
+              background-size: cover;
+              right: 18px; }
+            #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu.languages {
+              padding: 18px 20px 18px 56px; }
+              #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu.languages:before {
+                right: 5px; }
+              #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu.languages a:before {
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                left: 21px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-image: url("../assets/Flag.svg");
+                background-size: cover; }
+              #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu.languages ul li {
+                padding-left: 56px; }
+      #container .wrapper .mainbar__navbar .menu-toggle {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        display: none;
+        cursor: pointer; }
+      #container .wrapper .mainbar__navbar .mobile-icon, #container .wrapper .mainbar__navbar .mobile-sign-in {
+        display: none; }
+    #container .wrapper .mainbar__wrapper {
+      padding: 60px 90px 100px; }
+      #container .wrapper .mainbar__wrapper .main-title {
+        font-size: 40px;
+        line-height: 48px;
+        text-transform: uppercase;
+        color: #06038D;
+        font-weight: 300;
+        margin-bottom: 40px; }
+      #container .wrapper .mainbar__wrapper .back-button {
+        cursor: pointer;
+        display: none;
+        font-size: 12px;
+        line-height: 24px;
+        color: #C6007E;
+        text-decoration: underline;
+        margin-bottom: 20px;
+        font-weight: bold;
+        position: relative;
+        padding-left: 17px; }
+        #container .wrapper .mainbar__wrapper .back-button:before {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-image: url("../assets/Vector.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0; }
+      #container .wrapper .mainbar__wrapper .main-form-box {
+        padding: 0px 50px 50px;
+        box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        border-radius: 3px; }
+        #container .wrapper .mainbar__wrapper .main-form-box .passangers {
+          display: flex;
+          align-items: flex-end; }
+          #container .wrapper .mainbar__wrapper .main-form-box .passangers .avatar-icon {
+            width: 56px;
+            height: 56px;
+            border: 1px solid #e1e1e1;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 14px;
+            position: relative;
+            margin-top: -20px;
+            background-color: #ffffff; }
+            #container .wrapper .mainbar__wrapper .main-form-box .passangers .avatar-icon img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%); }
+          #container .wrapper .mainbar__wrapper .main-form-box .passangers .passenger-icon {
+            font-size: 12px;
+            line-height: 16px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #06038D;
+            margin-bottom: 5px; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender {
+          margin-top: 17px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .name {
+            flex: 1;
+            display: flex;
+            margin-right: 20px; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .name input[type="text"] {
+              width: 50%;
+              border: none;
+              padding: 23px 0px 23px 16px;
+              border: 1px solid #999999;
+              font-size: 16px;
+              line-height: 24px;
+              color: #999999;
+              border-radius: 0 3px 3px 0;
+              outline: none; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .name input[type="text"].no-border-right {
+                border-right: 0px;
+                border-radius: 3px 0 0 3px; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .fill-out-info {
+            display: none;
+            font-size: 12px;
+            line-height: 18px;
+            color: #999999;
+            margin-top: 7px;
+            margin-bottom: 21px;
+            padding-left: 20px;
+            position: relative; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .fill-out-info:before {
+              content: "";
+              position: absolute;
+              width: 12px;
+              height: 12px;
+              display: inline-block;
+              background-image: url("../assets/info-smaller.svg");
+              background-size: cover;
+              top: 2px;
+              left: 0; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender {
+            display: flex;
+            width: 200px; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .female, #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .male {
+              width: 50%;
+              padding: 25px 15px;
+              display: flex;
+              border: 2px solid #999999;
+              background-color: #ffffff;
+              border-radius: 0px 3px 3px 0px;
+              cursor: pointer;
+              color: #06038D;
+              font-size: 14px;
+              line-height: 20px;
+              font-weight: bold; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .female.diff-border-radius, #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .male.diff-border-radius {
+                border-radius: 3px 0px 0px 3px; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .female span, #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .male span {
+                margin-right: 10px;
+                display: flex;
+                align-items: center; }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .female span img, #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .male span img {
+                  display: none; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .female.active, #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .male.active {
+                border: 2px solid #C6007E;
+                color: #C6007E; }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .female.active span img, #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .male.active span img {
+                  display: block; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .female {
+              border-width: 2px 0px 2px 2px; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .female span {
+                margin-right: 5px; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .male {
+              border-width: 2px 2px 2px 0; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .special-block {
+          margin-top: 10px;
+          display: flex;
+          align-items: baseline;
+          margin-bottom: 9px; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .special-block .special-link {
+            margin-right: 21px;
+            font-size: 12px;
+            line-height: 24px;
+            text-transform: uppercase;
+            font-weight: bold; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .special-block .special-link a {
+              color: #C6007E; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .special-block .info-text {
+            color: #343434;
+            font-size: 12px;
+            line-height: 18px; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .content-divider {
+          width: 100%;
+          height: 1px;
+          background-color: #F2F2F2; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .custom-checkbox-wizz {
+          margin-top: 30px; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .custom-checkbox-wizz label {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: bold;
+            color: #343434;
+            user-select: none; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .custom-checkbox-wizz .styled-checkbox {
+            position: absolute;
+            opacity: 0; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .custom-checkbox-wizz .styled-checkbox + label {
+              position: relative;
+              cursor: pointer;
+              padding: 0; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .custom-checkbox-wizz .styled-checkbox + label:before {
+              content: "";
+              margin-right: 10px;
+              display: inline-block;
+              vertical-align: middle;
+              width: 22px;
+              height: 22px;
+              background: transparent;
+              border: 2px solid #999999;
+              border-radius: 3px; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .custom-checkbox-wizz .styled-checkbox:checked + label:before {
+              background-color: #C6007E;
+              background-image: url("../assets/checkmark.svg");
+              background-size: 18px;
+              background-repeat: no-repeat;
+              background-position: center;
+              border: 2px solid transparent; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select {
+          margin-top: 40px; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .title {
+            font-weight: 300;
+            font-size: 32px;
+            line-height: 38px;
+            color: #06038D;
+            position: relative; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .title.with-info:after {
+              content: "";
+              position: absolute;
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+              background-image: url("../assets/info.svg");
+              background-size: cover;
+              top: 59%;
+              transform: translateY(-50%);
+              margin-left: 12px;
+              cursor: pointer; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box {
+              border: 1px solid #e1e1e1;
+              border-radius: 3px;
+              width: 32%;
+              cursor: pointer;
+              position: relative; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box.active {
+                border: 1px solid #06038D; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box:hover {
+                border-color: #06038D; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box.popular .popular-ribbon {
+                position: absolute;
+                top: 0;
+                right: 0; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box .box-content {
+                height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: center; }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box .box-content .number {
+                  font-size: 22px;
+                  line-height: 28px;
+                  color: #343434;
+                  font-weight: bold; }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box .box-content .bag {
+                  margin-bottom: 30px;
+                  margin-top: 40px; }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box .box-content.middle-margin-top {
+                  margin-bottom: 25px;
+                  margin-top: 30px; }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box .box-content.less-margin-top {
+                  margin-bottom: 20px;
+                  margin-top: 22px; }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box .box-content .price {
+                  color: #06038D;
+                  font-size: 14px;
+                  line-height: 20px;
+                  font-weight: normal;
+                  margin-bottom: 30px; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .custom-select {
+            margin-top: 30px;
+            margin-bottom: 30px; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .custom-select select {
+              border: none;
+              -webkit-appearance: none;
+              width: 100%;
+              background: url("../assets/caret.svg") 98%/15% no-repeat #F2F2F2;
+              background-size: 8px;
+              color: #C6007E;
+              font-size: 12px;
+              line-height: 24px;
+              text-transform: uppercase;
+              font-weight: bold;
+              padding: 8px 20px 8px 20px;
+              outline: none;
+              border-radius: 3px; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .custom-select.more-margin {
+              margin-bottom: 40px; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .description {
+              display: flex; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .description .bag-image {
+                margin-right: 55px; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .description .info-list .main-info {
+                margin-bottom: 10px;
+                font-size: 18px;
+                line-height: 22px;
+                font-weight: bold;
+                color: #343434; }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .description .info-list .main-info span.wizz-blue {
+                  color: #06038D; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .description .info-list .list ul {
+                margin: 0;
+                padding: 0;
+                list-style: circle inside url("../assets/dot.svg"); }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .description .info-list .list ul li span.wizz-blue {
+                  color: #06038D;
+                  font-weight: bold; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags.double {
+              margin-top: 40px; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags.single {
+              margin-top: 20px;
+              margin-bottom: 30; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags.single .description .bag-image {
+                margin-left: 15px; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .add-baggage-button .button {
+              color: #06038D;
+              font-weight: bold;
+              font-size: 14px;
+              line-height: 20px;
+              text-align: center;
+              width: 240px;
+              border: 2px solid #999999;
+              border-radius: 3px;
+              position: relative;
+              padding: 25px 0;
+              cursor: pointer; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .add-baggage-button .button span {
+                font-size: 12px;
+                line-height: 18px;
+                font-weight: normal; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .add-baggage-button .button:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                height: 100%;
+                top: 0;
+                width: 16px;
+                background-color: #E5E5E5; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .add-baggage-button .button.extra-charge {
+                padding: 18px 0 17px 0; }
+              #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .add-baggage-button .button:hover {
+                border: 2px solid #06038D; }
+                #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .add-baggage-button .button:hover:after {
+                  background-color: #06038D; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .divider-with-or {
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 14px;
+          line-height: 17px;
+          color: #343434;
+          position: relative; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .divider-with-or:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #e1e1e1;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%); }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .divider-with-or span {
+            padding: 0 30px;
+            position: relative;
+            background-color: #ffffff; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .next-button-and-other-options {
+          text-transform: uppercase;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 50px; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .next-button-and-other-options .next-button {
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 500;
+            background-color: #C6007E;
+            border: 1px solid transparent;
+            padding: 17px 0;
+            width: 180px;
+            text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.5s; }
+            #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .next-button-and-other-options .next-button:hover {
+              border: 1px solid #C6007E;
+              background-color: white;
+              color: #C6007E; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .next-button-and-other-options .same-to-all {
+            color: #C6007E;
+            text-decoration: underline;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 24px;
+            cursor: pointer; }
+@media(max-width: 1240px) {
+  #container {
+    @media(max-width: 1080px); }
+    #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .description .bag-image {
+      margin-right: 20px; }
+    #container .wrapper .mainbar__wrapper .main-form-box {
+      padding: 0 20px 50px; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .name {
+        width: 100%; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .special-block {
+        margin-bottom: 23px; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags {
+        display: block; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .description {
+          margin-bottom: 20px; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .add-baggage-button .button {
+          width: 100%;
+          padding: 15px 0; }
+          #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .carry-bags .add-baggage-button .button.extra-charge {
+            padding: 8px 0 7px 0; } }
+@media(max-width: 991px) {
+  #container .wrapper .sidebar {
+    display: none; }
+  #container .wrapper .mainbar__navbar {
+    height: 60px; }
+    #container .wrapper .mainbar__navbar .menu-toggle {
+      display: block; }
+    #container .wrapper .mainbar__navbar .mobile-icon {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    #container .wrapper .mainbar__navbar .mobile-sign-in {
+      display: block;
+      position: absolute;
+      right: 46px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px; }
+      #container .wrapper .mainbar__navbar .mobile-sign-in:after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 20px;
+        right: -26px;
+        background-image: url("../assets/lock.svg");
+        background-size: cover;
+        top: -5px; }
+    #container .wrapper .mainbar__navbar nav.main-menu {
+      background-color: #06038D;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+      overflow: hidden;
+      transition: all 0.5s;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.26s ease; }
+      #container .wrapper .mainbar__navbar nav.main-menu.opened {
+        transform: scaleY(1); }
+      #container .wrapper .mainbar__navbar nav.main-menu ul {
+        display: block;
+        padding: 0;
+        text-align: center; }
+        #container .wrapper .mainbar__navbar nav.main-menu ul li.mobile-hidden {
+          display: none; }
+        #container .wrapper .mainbar__navbar nav.main-menu ul li ul {
+          position: relative; }
+        #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu.languages {
+          padding: 18px 20px; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu.languages:before {
+            right: 18px; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu.languages a {
+            position: relative; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu.languages a:before {
+            left: -40px; }
+          #container .wrapper .mainbar__navbar nav.main-menu ul li.sub-menu.languages ul li {
+            padding-left: unset; }
+  #container .wrapper .mainbar__wrapper {
+    padding: 26px 20px 260px; }
+    #container .wrapper .mainbar__wrapper .back-button {
+      display: block; }
+    #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender {
+      flex-direction: column; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .name {
+        margin: 0; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .fill-out-info {
+        display: block; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender {
+        width: 100%; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .female, #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .name-and-gender .gender .male {
+          justify-content: center; }
+    #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .title {
+      width: 150px; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .title.with-info:after {
+        top: 80%; }
+    #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box {
+      overflow-x: auto; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box::-webkit-scrollbar {
+        display: none; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box {
+        width: unset;
+        min-width: 55%;
+        margin-right: 10px; }
+        #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .baggage-select .baggages-box .box:last-child {
+          margin: 0; }
+    #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .special-block {
+      display: block; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .special-block .special-link {
+        margin-right: 0;
+        margin-bottom: 10px; } }
+@media(max-width: 460px) {
+  #container .wrapper .mainbar__wrapper .main-form-box {
+    padding-bottom: 0; }
+    #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .next-button-and-other-options {
+      flex-direction: column;
+      margin-top: 30px; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .next-button-and-other-options .next-button {
+        order: 2;
+        width: 100%;
+        margin-bottom: 20px; }
+      #container .wrapper .mainbar__wrapper .main-form-box .baggage-form form .next-button-and-other-options .same-to-all {
+        margin-bottom: 20px; } }
+
+/*# sourceMappingURL=main.css.map */
